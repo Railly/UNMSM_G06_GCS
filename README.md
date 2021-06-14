@@ -10,5 +10,4 @@
  8. Ytusaca Quispe, Saúl Fernando
 
 ## Descripcion del Proyecto 
-### Easy Task
-El proyecto consiste en el desarrollo de un sitio web de “Ayuda a estudiantes de primeros ciclos”. Se tiene como principal objetivo unificar la información sobre herramientas poco conocidas pero útiles, recomendaciones de fuentes de información gratuitos que abarquen los temas principales de los cursos.
+### ...
