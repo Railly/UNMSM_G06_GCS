@@ -4,8 +4,7 @@ import { device } from 'styles/devices'
 export default function Button ({ children, type, toPath }) {
   const bgColor = {
     primary: 'var(--orange)',
-    secondary: 'var(--white)',
-    terciary: 'var(--black)'
+    secondary: 'var(--white)'
   }
 
   return (
