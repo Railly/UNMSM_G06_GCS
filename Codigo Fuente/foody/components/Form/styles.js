@@ -8,6 +8,10 @@ export default css`
     font-size: 0.8em;
     margin-bottom: 2em;
   }
+  a {
+    color: var(--blue);
+  }
+
   section {
     display: flex;
     justify-content: center;
