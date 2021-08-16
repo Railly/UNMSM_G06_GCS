@@ -33,6 +33,6 @@ export default css`
     padding: 2em;
   }
   h1 {
-    margin: 0;
+    margin: 1em 0;
   }
 `
