@@ -1,4 +1,4 @@
-import Illustration from 'components/Illustration'
+import Illustration from 'components/Icons/Illustration'
 import Button from 'components/Button'
 import styles from './styles'
 
