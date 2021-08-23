@@ -1,4 +1,4 @@
-import Button from 'components/Button'
+import LandingButton from 'components/LandingButton'
 
 const content = {
   cookbook: {
@@ -25,7 +25,7 @@ export default function CardService ({ service }) {
         </header>
         <main>
           <p>{content[service].description}</p>
-          <Button type="secondary" toPath="/">Saber mas</Button>
+          <LandingButton type="secondary" toPath="/">Saber mas</LandingButton>
         </main>
       </section>
 			<style jsx>{`
