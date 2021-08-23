@@ -1,9 +1,15 @@
-import AppButton from 'components/AppButton'
+import AppButton from 'components/Buttons/AppButton'
 import Cookbook from 'components/Cookbook'
 import FourCharacters from 'components/Icons/FourCharacters'
 import Logo from 'components/Icons/Logo'
+import { useRouter } from 'next/router'
 
 export default function App () {
+  const router = useRouter()
+  const handleClick = () => {
+    router.push('/browse/add-cookbook')
+  }
+
   return (
     <>
       <section>
@@ -12,16 +18,9 @@ export default function App () {
         </div>
         <p>Crea un libro de cocina a selecciona uno :)</p>
         {/* TODO* We must fetch all the cookbooks here */}
-        <div className="cookbooks">
-          <Cookbook name="Libro de cocina 1" />
-          <Cookbook name="Libro de cocina 2" />
-          <Cookbook name="Libro de cocina 3" />
-          <Cookbook name="Libro de cocina 4" />
-          <Cookbook name="Libro de cocina 5" />
-          <Cookbook name="Libro de cocina 6" />
-        </div>
+        <div className="cookbooks"></div>
         <div>
-          <AppButton onClick={() => {}} type="primary">
+          <AppButton onClick={handleClick} type="primary">
             NUEVO LIBRO DE COCINA
           </AppButton>
         </div>
