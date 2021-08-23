@@ -1,11 +1,15 @@
 import { device } from 'styles/devices'
 import Google from 'components/Icons/Google'
 
-export default function Button ({ children, onClick, disabled, type }) {
+export default function AppButton ({ children, onClick, disabled, type }) {
   const bgColor = {
     primary: {
       enabled: 'var(--black)',
       disabled: 'var(--gray)'
+    },
+    cancel: {
+      enabled: 'var(--red)',
+      disabled: 'var(--pink)'
     },
     google: {
       enabled: '#fff',
@@ -15,6 +19,10 @@ export default function Button ({ children, onClick, disabled, type }) {
 
   const fontColor = {
     primary: {
+      enabled: 'var(--white)',
+      disabled: 'var(--white)'
+    },
+    cancel: {
       enabled: 'var(--white)',
       disabled: 'var(--white)'
     },
@@ -32,6 +40,7 @@ export default function Button ({ children, onClick, disabled, type }) {
       </button>
       <style jsx>{`
         button {
+          font-family: "Montserrat", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
           cursor: pointer;
           display: flex;
           justify-content: space-evenly;

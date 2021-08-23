@@ -9,6 +9,7 @@ export default function Cookbook ({ name }) {
       </button>
       <style jsx>{`
         button {
+          font-family: "Montserrat", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
           align-items: center;
           border: 1px solid transparent;
           border-radius: 6px;
