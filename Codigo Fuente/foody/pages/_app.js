@@ -1,17 +1,19 @@
-import AuthLayout from 'components/AuthLayout'
-import BrowseLayout from 'components/BrowseLayout'
-import LandingLayout from 'components/LandingLayout'
+import AuthLayout from 'components/Layouts/AuthLayout'
+import BrowseLayout from 'components/Layouts/BrowseLayout'
+import LandingLayout from 'components/Layouts/LandingLayout'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import '../styles/globals.css'
 
 export const BROWSE_PAGES = {
   '/browse': 'Navegar',
+  '/browse/add-cookbook': 'Nuevo Libro',
   '/browse/search': 'Buscar',
   '/browse/planner': 'Planeador',
   '/browse/settings': 'Configuracion',
   '/browse/feedback': 'Sugerencias'
 }
+const re = /browse/
 
 const AUTH_PAGES = {
   '/register': 'Registro',
@@ -53,7 +55,7 @@ function MyApp ({ Component, pageProps }) {
           <Component {...pageProps} />
         </AuthLayout>
         )}
-        {BROWSE_PAGES[pathname] && (
+        {re.test(pathname) && (
           <div style={{ display: 'grid', gridTemplateColumns: '2fr 30fr 45fr' }}>
             <BrowseLayout />
             <Component {...pageProps} />

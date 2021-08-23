@@ -1,4 +1,4 @@
-import Button from 'components/Button'
+import LandingButton from 'components/LandingButton'
 
 const content = {
   basic: {
@@ -46,7 +46,7 @@ export default function CardPricing ({ plan }) {
               Carateristica 4
             </li>
           </ul>
-          <Button type="secondary" toPath="/">Elige el plan</Button>
+          <LandingButton type="secondary" toPath="/">Elige el plan</LandingButton>
         </main>
       </section>
 			<style jsx>{`
