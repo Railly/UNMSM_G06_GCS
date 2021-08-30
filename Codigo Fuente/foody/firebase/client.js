@@ -57,7 +57,6 @@ export const addCookbook = ({ name, userId }) => {
     createdAt: firebase.firestore.Timestamp.fromDate(new Date())
   })
 }
-
 // TODO: Add Recipe DB
 export const addRecipe = ({ name, userId }) => {
   return db.collection('cookbooks').add({
@@ -67,28 +66,43 @@ export const addRecipe = ({ name, userId }) => {
   })
 }
 
-export const fetchLatestCookbooks = async (uid) => {
+const mapFromFirebaseToObject = (doc) => {
+  const data = doc.data()
+  const id = doc.id
+  const { createdAt } = data
+
+  return {
+    ...data,
+    id,
+    createdAt: +createdAt.toDate()
+  }
+}
+
+// TODO: .limit(20)
+export const listenLatestCookbooks = (userId, callback) => {
   return db
     .collection('cookbooks')
-    .where('userId', '==', `${uid}`)
+    .where('userId', '==', `${userId}`)
     .orderBy('createdAt')
-    .get()
-    .then((snapshot) => {
-      return snapshot.docs.map((doc) => {
-        const data = doc.data()
-        const id = doc.id
-        const { createdAt } = data
-
-        return {
-          ...data,
-          id,
-          createdAt: +createdAt.toDate()
-        }
-      })
+    .onSnapshot(({ docs }) => {
+      const newCookbooks = docs.map(mapFromFirebaseToObject)
+      callback(newCookbooks)
     })
 }
 
-export const fetchLatestRecipes = async (bookId) => {
+export const listenLatestRecipes = (cookbookId, callback) => {
+  return db
+    .collection('cookbooks')
+    .doc(`${cookbookId}`)
+    .collection('recipes')
+    .orderBy('createdAt')
+    .onSnapshot(({ docs }) => {
+      const newRecipes = docs.map(mapFromFirebaseToObject)
+      callback(newRecipes)
+    })
+}
+
+export const fetchLatestCookbooks = async (bookId) => {
   return db
     .collection('cookbooks')
     .doc(bookId)
