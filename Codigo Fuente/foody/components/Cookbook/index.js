@@ -1,17 +1,12 @@
 import Arrow from 'components/Icons/Arrow'
-import Link from 'next/link'
 
-export default function Cookbook ({ name, id }) {
+export default function Cookbook ({ name }) {
   return (
     <>
-      <Link href={`/browse/${id}`}>
-        <a>
-          <button>
-            {name}
-            <Arrow />
-          </button>
-        </a>
-      </Link>
+      <button>
+        {name}
+        <Arrow />
+      </button>
       <style jsx>{`
         button {
           font-family: "Montserrat", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;

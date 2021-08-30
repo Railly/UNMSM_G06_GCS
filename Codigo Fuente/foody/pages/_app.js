@@ -13,7 +13,6 @@ export const BROWSE_PAGES = {
   '/browse/settings': 'Configuracion',
   '/browse/feedback': 'Sugerencias'
 }
-const re = /browse/
 
 const AUTH_PAGES = {
   '/register': 'Registro',
@@ -55,7 +54,7 @@ function MyApp ({ Component, pageProps }) {
           <Component {...pageProps} />
         </AuthLayout>
         )}
-        {re.test(pathname) && (
+        {BROWSE_PAGES[pathname] && (
           <div style={{ display: 'grid', gridTemplateColumns: '2fr 30fr 45fr' }}>
             <BrowseLayout />
             <Component {...pageProps} />
