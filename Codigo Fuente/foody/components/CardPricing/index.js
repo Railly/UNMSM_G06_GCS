@@ -1,4 +1,4 @@
-import LandingButton from 'components/LandingButton'
+import LandingButton from 'components/Buttons/LandingButton'
 
 const content = {
   basic: {
@@ -19,13 +19,13 @@ const content = {
 }
 
 export default function CardPricing ({ plan }) {
-	return(
+  return (
 		<>
       <section>
         <header>
           <span>{content[plan].title}</span>
-          <span> 
-            <h1>{content[plan].price} {` `}
+          <span>
+            <h1>{content[plan].price} {' '}
             <span className="gray">por mes</span>
             </h1>
           </span>
@@ -81,5 +81,5 @@ export default function CardPricing ({ plan }) {
         }
 			`}</style>
     </>
-	)
+  )
 }

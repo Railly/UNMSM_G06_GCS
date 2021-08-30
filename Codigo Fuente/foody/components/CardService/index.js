@@ -1,4 +1,4 @@
-import LandingButton from 'components/LandingButton'
+import LandingButton from 'components/Buttons/LandingButton'
 
 const content = {
   cookbook: {
@@ -16,7 +16,7 @@ const content = {
 }
 
 export default function CardService ({ service }) {
-	return(
+  return (
 		<>
       <section>
         <header>
@@ -64,5 +64,5 @@ export default function CardService ({ service }) {
         }
 			`}</style>
     </>
-	)
+  )
 }
